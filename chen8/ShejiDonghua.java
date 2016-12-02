@@ -7,7 +7,7 @@ import java.awt.event.WindowEvent;
 public class ShejiDonghua extends Canvas implements Runnable
 {
 	Thread th1,th2;
-	int x,y,i;
+	int x,y,i,x1,y1,i1;
 	Image[] im;
 	public ShejiDonghua() {}
 	public void init()
@@ -17,16 +17,19 @@ public class ShejiDonghua extends Canvas implements Runnable
 	      for(int i=0;i<4;i++)
 	    	  im[i] = tool.getImage("/Users/chenzzh/Documents/workspace/JavaExperimentOfLzu/shiyan1_11/b"+i+".gif");
 	      x=y=i=0;
+	      x1=y1=300;
+	      i1=0;
 	      th1=new Thread(this);
 	      th2 = new Thread(this);
 	      th1.start();
-//	      th2.start();
+	      th2.start();
 	 }
 	public void paint(Graphics g)
 	{
-      g.drawImage(im[i],x,y,this);
-      g.drawLine(0,100,x,100);
-      g.drawLine(100,0,100,y);
+	      g.drawImage(im[i],x,y,this);
+	      g.drawImage(im[i1], x1, y1, this);
+//	      g.drawLine(0,150,x,150);
+//	      g.drawLine(150,0,150,y);
 	}
 	public void run()
 	{
@@ -44,10 +47,9 @@ public class ShejiDonghua extends Canvas implements Runnable
 			}
          }
          else if(Thread.currentThread()==th2) {
-        	 if(i<3) i++;
-			 	else i=0;
-			x=300-x;
-			y=300-y;
+        	i1=(int)(Math.random()*3);
+        	 if(x1 >=0) x1=x1-3;else x1=300;
+        	 if(y1 >=0) y1=y1-3;else y1=300;
 			repaint();
 			try {
 				Thread.sleep(100);
