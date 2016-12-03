@@ -1,4 +1,5 @@
-package shiyan1_11;
+/*java实验-线程设计动画程序
+*/
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
