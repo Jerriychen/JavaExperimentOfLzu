@@ -1,4 +1,6 @@
-/*java实验-线程设计动画程序
+/*
+java实验-线程设计动画程序
+Author:chenzzh
 */
 import java.awt.*;
 import java.awt.event.WindowAdapter;
