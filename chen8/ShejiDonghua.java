@@ -1,7 +1,5 @@
-/*
-java实验-线程设计动画程序
-Author:chenzzh
-*/
+package shiyan1_11;
+
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -18,7 +16,7 @@ public class ShejiDonghua extends Canvas implements Runnable
 	      im=new Image[4];
 	      Toolkit tool = this.getToolkit();
 	      for(int i=0;i<4;i++)
-	    	  im[i] = tool.getImage("/Users/chenzzh/Documents/workspace/JavaExperimentOfLzu/shiyan1_11/b"+i+".gif");
+	    	  im[i] = tool.getImage("/Users/chenzzh/Documents/workspace/JavaExperimentOfLzu/src/shiyan1_11/b"+i+".gif");
 	      x=y=i=0;
 	      x1=y1=300;
 	      i1=0;
@@ -29,10 +27,10 @@ public class ShejiDonghua extends Canvas implements Runnable
 	 }
 	public void paint(Graphics g)
 	{
-	      g.drawImage(im[i],x,y,this);
-	      g.drawImage(im[i1], x1, y1, this);
-//	      g.drawLine(0,150,x,150);
-//	      g.drawLine(150,0,150,y);
+	      g.drawImage(im[i],x,y,30,30,this);
+	      g.drawImage(im[i1], x1, y1,30,30, this);
+	      g.drawLine(y,0,x,y);
+	      g.drawLine(0,x,x,y);
 	}
 	public void run()
 	{

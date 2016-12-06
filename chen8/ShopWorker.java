@@ -40,6 +40,9 @@ public class ShopWorker implements Runnable {
 		}
 		else if(Thread.currentThread()==boss) {
 			while(true) {
+				try {
+					boss.sleep(1000);
+				} catch (InterruptedException e) {	}
 				zhangsan.interrupt();
 				lisi.interrupt();
 				if(!(zhangsan.isAlive()||lisi.isAlive())) {
